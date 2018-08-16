@@ -1,0 +1,540 @@
+[ 2018-08-15T12:02:03+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000335s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000394s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000433s ]
+
+[ 2018-08-15T12:02:04+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000370s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000365s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000395s ]
+
+[ 2018-08-15T12:10:33+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000434s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000356s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:10:35+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000333s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000396s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000429s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:10:36+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000338s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000375s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:10:42+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000372s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000356s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:10:53+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000373s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000368s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:10:54+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000345s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000451s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000486s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:10:54+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000370s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000362s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:11:18+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000340s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000390s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:11:19+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000347s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000393s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:11:23+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000360s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000418s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:11:23+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000368s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000366s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:11:24+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000381s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000371s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:11:24+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000327s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000356s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:11:31+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000332s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000365s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:11:59+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000393s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000371s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:12:00+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000335s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000361s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:16:14+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000342s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000373s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000422s ]
+
+[ 2018-08-15T12:18:49+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000329s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000350s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:21:24+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000327s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000357s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:24:21+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000343s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000391s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:24:33+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000339s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000376s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000427s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:25:24+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000328s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000402s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000432s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `as_users` SET `user_login`='admin',`user_pass`='###25d944d47c2fd53c6f7d28a5c558329a',`user_nicename`='admin',`user_email`='1548137852@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='123.125.5.211',`last_login_time`='2018-08-15 12:25:24',`create_time`='2018-08-14 04:20:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0004s ]
+
+[ 2018-08-15T12:25:47+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000414s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000486s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-08-15T12:25:54+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000442s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001056s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000517s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-08-15T12:26:01+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000440s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000473s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-08-15T12:26:01+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000440s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000495s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:27:03+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000433s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000496s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:33:00+08:00 ] 123.125.5.211 /aishe/index.php/Admin/setting/password_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000452s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000548s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_options` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-08-15T12:33:16+08:00 ] 123.125.5.211 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000373s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000378s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000415s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_role_user` [ RunTime:0.0004s ]
+SQL: SELECT `role_id` FROM as_role_user a INNER JOIN as_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `as_users` SET `user_login`='admin',`user_pass`='###a2e02e779d76f77e33004ae4abd02e3c',`user_nicename`='admin',`user_email`='1548137852@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='123.125.5.211',`last_login_time`='2018-08-15 12:33:16',`create_time`='2018-08-14 04:20:36',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2018-08-15T14:45:49+08:00 ] 123.125.5.211 /aishe/index.php/Admin/house/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000340s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000380s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000412s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_house` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_housesource` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housetype` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_housedetail` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housephoto` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_houseorder` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_city` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `as_house` (`housename`,`tagid`,`houseintro`,`houseorder`,`housecity`,`houseaddress`,`houseposition`,`ownerID`,`ownername`,`ownerphone`,`houselicense`,`typeid`,`house_x`,`house_y`,`createtime`,`online`) VALUES ('望京港旅大厦','2','酒店公寓','酒店公寓酒店公寓酒店公寓酒店公寓酒店公寓','1','北京朝阳望京港旅大厦','北京朝阳望京','142201199809099090','黑猪','13312345678','','1','116.471057','40.002079','1534315549','1') [ RunTime:0.0033s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `as_housedetail` (`houseid`,`bathroom`,`mindays`,`maxmembers`,`housearea`,`bedtype`,`starttime`,`endtime`,`cash`,`price`,`discount`,`specialprice`,`createtime`,`isdiscount`,`isspecial`) VALUES ('30','1','1','1','123','大床','1534305600','1534316400','100','125','[{\"days\":\"12\",\"discount\":\"7\"}]','[{\"money\":\"100\",\"time\":1534314780}]','1534315549','1','1') [ RunTime:0.0025s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031014.png','5b73cbc4504e5.png','admin/20180815/5b73cbc4504e5.png','12','30','1534315549') [ RunTime:0.0023s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031028.png','5b73cbc4e4d5c.png','admin/20180815/5b73cbc4e4d5c.png','2','30','1534315549') [ RunTime:0.0021s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031052.png','5b73cbc56288a.png','admin/20180815/5b73cbc56288a.png','3','30','1534315549') [ RunTime:0.0021s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031102.png','5b73cbc5c2a5f.png','admin/20180815/5b73cbc5c2a5f.png','4','30','1534315549') [ RunTime:0.0022s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031117.png','5b73cbc619a13.png','admin/20180815/5b73cbc619a13.png','5','30','1534315549') [ RunTime:0.0023s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031134.png','5b73cbc669d37.png','admin/20180815/5b73cbc669d37.png','6','30','1534315549') [ RunTime:0.0040s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031142.png','5b73cbd4af396.png','admin/20180815/5b73cbd4af396.png','7','30','1534315549') [ RunTime:0.0028s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031350.png','5b73cbdca8547.png','admin/20180815/5b73cbdca8547.png','8','30','1534315549') [ RunTime:0.0040s ]
+SQL: INSERT INTO `as_housephoto` (`photoname`,`savename`,`photopath`,`weight`,`houseid`,`createtime`) VALUES ('QQ截图20180804031405.png','5b73cbe00793e.png','admin/20180815/5b73cbe00793e.png','9','30','1534315549') [ RunTime:0.0046s ]
+SQL: UPDATE `as_house` SET `houselicense`='' WHERE `houseid` = 30 [ RunTime:0.0022s ]
+SQL: SELECT `tagid`,count(*) as num FROM `as_house` WHERE `tagid` > 0 GROUP BY tagid  [ RunTime:0.0004s ]
+SQL: UPDATE `as_housesource` SET `num`='11' WHERE `id` = 1 [ RunTime:0.0036s ]
+SQL: UPDATE `as_housesource` SET `num`='14' WHERE `id` = 2 [ RunTime:0.0024s ]
+SQL: UPDATE `as_housesource` SET `num`='3' WHERE `id` = 4 [ RunTime:0.0020s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 6 [ RunTime:0.0021s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 9 [ RunTime:0.0020s ]
+
+[ 2018-08-15T15:12:03+08:00 ] 123.125.5.211 /aishe/index.php/Admin/house/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000326s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000363s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_house` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_housesource` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housetype` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_housedetail` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_housephoto` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_houseorder` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_city` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+SQL: UPDATE `as_house` SET `housename`='望京港旅大厦',`tagid`='2',`houseintro`='酒店公寓',`houseorder`='						酒店公寓酒店公寓酒店公寓酒店公寓酒店公寓					',`housecity`='1',`houseaddress`='北京朝阳望京港旅大厦',`houseposition`='北京朝阳望京',`ownerID`='142201199809099090',`ownername`='黑猪',`ownerphone`='13312345678',`houselicense`='',`typeid`='1',`house_x`='116.471057',`house_y`='40.002079',`createtime`='1534317123',`online`='1' WHERE `houseid` = 30 [ RunTime:0.0036s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [8] Undefined variable: houseid /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 407 行.
+NOTIC: [8] Undefined variable: houseid /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 408 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `as_housedetail` WHERE `houseid` = 30 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `as_housedetail` SET `houseid`='30',`bathroom`='1',`mindays`='1',`maxmembers`='1',`housearea`='123',`bedtype`='大床',`starttime`='1534305600',`endtime`='1534316400',`cash`='100',`price`='125',`discount`='[{\"days\":\"12\",\"discount\":\"7\"}]',`specialprice`='[{\"money\":\"100\",\"time\":1534314780}]',`createtime`='1534317123',`isdiscount`='1',`isspecial`='1' WHERE `houseid` = 30 [ RunTime:0.0023s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 466 行.
+SQL: UPDATE `as_house` SET `houselicense`='' WHERE `houseid` = 30 [ RunTime:0.0026s ]
+SQL: SELECT `tagid`,count(*) as num FROM `as_house` WHERE `tagid` > 0 GROUP BY tagid  [ RunTime:0.0003s ]
+SQL: UPDATE `as_housesource` SET `num`='11' WHERE `id` = 1 [ RunTime:0.0023s ]
+SQL: UPDATE `as_housesource` SET `num`='14' WHERE `id` = 2 [ RunTime:0.0069s ]
+SQL: UPDATE `as_housesource` SET `num`='3' WHERE `id` = 4 [ RunTime:0.0022s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 6 [ RunTime:0.0029s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 9 [ RunTime:0.0021s ]
+
+[ 2018-08-15T15:17:34+08:00 ] 123.125.5.211 /aishe/index.php/Admin/house/delete?type=2&id=30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000371s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000377s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_house` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_housesource` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housetype` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_housedetail` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housephoto` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_houseorder` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_city` [ RunTime:0.0004s ]
+SQL: SELECT `houselicense` FROM `as_house` WHERE `houseid` = 30 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `as_house` SET `houselicense`='' WHERE `houseid` = 30 [ RunTime:0.0038s ]
+
+[ 2018-08-15T15:17:45+08:00 ] 123.125.5.211 /aishe/index.php/Admin/house/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000324s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000348s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_house` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `as_housesource` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housetype` [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_housedetail` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_housephoto` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_houseorder` [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `as_city` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+SQL: UPDATE `as_house` SET `housename`='望京港旅大厦',`tagid`='2',`houseintro`='酒店公寓',`houseorder`='												酒店公寓酒店公寓酒店公寓酒店公寓酒店公寓										',`housecity`='1',`houseaddress`='北京朝阳望京港旅大厦',`houseposition`='北京朝阳望京',`ownerID`='142201199809099090',`ownername`='黑猪',`ownerphone`='13312345678',`houselicense`='',`typeid`='1',`house_x`='116.471057',`house_y`='40.002079',`createtime`='1534317465',`online`='1' WHERE `houseid` = 30 [ RunTime:0.0034s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [8] Undefined variable: houseid /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 407 行.
+NOTIC: [8] Undefined variable: houseid /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 408 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `as_housedetail` WHERE `houseid` = 30 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `as_housedetail` SET `houseid`='30',`bathroom`='1',`mindays`='1',`maxmembers`='1',`housearea`='123',`bedtype`='大床',`starttime`='1534305600',`endtime`='1534316400',`cash`='100',`price`='125',`discount`='[{\"days\":\"12\",\"discount\":\"7\"}]',`specialprice`='[{\"money\":\"100\",\"time\":1534314780}]',`createtime`='1534317465',`isdiscount`='1',`isspecial`='1' WHERE `houseid` = 30 [ RunTime:0.0024s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/lnmp/aishe/application/Admin/Controller/HouseController.class.php 第 466 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /home/lnmp/aishe/simplewind/Core/Library/Think/Upload.class.php 第 170 行.
+SQL: UPDATE `as_house` SET `houselicense`='20180815/5b73d3992c280.png' WHERE `houseid` = 30 [ RunTime:0.0032s ]
+SQL: SELECT `tagid`,count(*) as num FROM `as_house` WHERE `tagid` > 0 GROUP BY tagid  [ RunTime:0.0003s ]
+SQL: UPDATE `as_housesource` SET `num`='11' WHERE `id` = 1 [ RunTime:0.0024s ]
+SQL: UPDATE `as_housesource` SET `num`='14' WHERE `id` = 2 [ RunTime:0.0024s ]
+SQL: UPDATE `as_housesource` SET `num`='3' WHERE `id` = 4 [ RunTime:0.0020s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 6 [ RunTime:0.0028s ]
+SQL: UPDATE `as_housesource` SET `num`='1' WHERE `id` = 9 [ RunTime:0.0048s ]
+
+[ 2018-08-15T15:19:37+08:00 ] 123.125.5.211 /aishe/index.php/Admin/Slideshow/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000355s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.000404s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `as_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `as_slideshow` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: validate /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto /home/lnmp/aishe/simplewind/Core/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /home/lnmp/aishe/simplewind/Core/Library/Think/Upload.class.php 第 170 行.
+SQL: INSERT INTO `as_slideshow` (`name`,`filename`,`savename`,`savepath`,`link`,`weight`,`createtime`,`updatetime`) VALUES ('七夕爬楼party','QQ截图20180804031052.png','5b73d40911cb7.png','20180815/','http://www.baidu.com','2','1534317577','1534317577') [ RunTime:0.0143s ]
+

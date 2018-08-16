@@ -1,0 +1,30 @@
+[ 2018-08-16T11:13:27+08:00 ] 127.0.0.1 /as/aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001000s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `as_role_user` [ RunTime:0.0100s ]
+SQL: SELECT `role_id` FROM as_role_user a INNER JOIN as_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0030s ]
+SQL: UPDATE `as_users` SET `user_login`='admin',`user_pass`='###a2e02e779d76f77e33004ae4abd02e3c',`user_nicename`='admin',`user_email`='1548137852@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2018-08-16 11:13:27',`create_time`='2018-07-10 11:10:19',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0020s ]
+
+[ 2018-08-16T13:58:21+08:00 ] 127.0.0.1 /aishe/index.php/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001000s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `as_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `as_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `as_role_user` [ RunTime:0.0090s ]
+SQL: SELECT `role_id` FROM as_role_user a INNER JOIN as_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0030s ]
+SQL: UPDATE `as_users` SET `user_login`='admin',`user_pass`='###a2e02e779d76f77e33004ae4abd02e3c',`user_nicename`='admin',`user_email`='1548137852@qq.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2018-08-16 13:58:21',`create_time`='2018-07-10 11:10:19',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0020s ]
+

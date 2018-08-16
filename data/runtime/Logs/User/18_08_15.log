@@ -1,0 +1,16 @@
+[ 2018-08-15T12:01:35+08:00 ] 123.125.5.211 /aishe/index.php/user/index/is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000337s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+NOTIC: [8] Undefined index: url /home/lnmp/aishe/application/Common/Controller/AppframeController.class.php 第 22 行.
+
+[ 2018-08-15T12:33:05+08:00 ] 123.125.5.211 /aishe/index.php/user/index/is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000295s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+NOTIC: [8] Undefined index: url /home/lnmp/aishe/application/Common/Controller/AppframeController.class.php 第 22 行.
+
