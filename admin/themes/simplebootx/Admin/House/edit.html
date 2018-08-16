@@ -1,0 +1,676 @@
+<admintpl file="header" />
+<link rel="stylesheet" href="__ROOT__/easyupload/easy-upload.css">
+<!--<link rel="stylesheet" href="__PUBLIC__/js/datetimepicker/jquery.datetimepicker.css">-->
+<style>
+	.easy_upload_delbtn{
+		display: none;
+	}
+	.easy_upload_upbtn{
+		display: none;
+	}
+	.reach{
+		width: 100px;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+	.discount{
+		width: 100px;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+	.specialrent{
+		margin-bottom: 10px;
+	}
+	.specialtime{
+		margin-bottom: 10px;
+	}
+	.pic-list li {
+		margin-bottom: 5px;
+	}
+	.allmap {
+		width: 600px;
+		height: 200px;
+		overflow: hidden;
+		margin:0;
+	}
+</style>
+<script type="text/html" id="photos-item-wrapper">
+	<li id="savedimage{id}">
+		<input id="photo-{id}" type="hidden" name="photos_url[]" value="{filepath}">
+		权重:&nbsp;<input type="text" name="weight[]" style="width: 50px;">
+		<input id="photo-{id}-name" type="text" name="photos_alt[]" value="{name}" style="width: 160px;" title="图片名称">
+		<img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
+		<a href="javascript:upload_one_image('图片上传','#photo-{id}');">替换</a>
+		<a href="javascript:(function(){$('#savedimage{id}').remove();})();">移除</a>
+	</li>
+</script>
+</head>
+<body>
+	<div class="wrap">
+		<!--<ul class="nav nav-tabs">-->
+			<!--<li><a href="{:U('menu/index')}">{:L('ADMIN_MENU_INDEX')}</a></li>-->
+			<!--<li><a href="{:U('menu/add')}">{:L('ADMIN_MENU_ADD')}</a></li>-->
+			<!--<li class="active"><a>编辑菜单</a></li>-->
+		<!--</ul>-->
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('house/edit_post')}">
+			<!--<h3 style="" class="controls">修改房源标签</h3>-->
+			<input type="hidden" value="{$online}" name="state" id="state">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">房源名称:</label>
+					<div class="controls">
+						<input type="text" name="housename" id='housename' value="{$data.housename}">
+						<!--<span class="form-required">*</span>-->
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房源类型:</label>
+					<div class="controls">
+						<select name="typename">
+							<foreach name="housetag" item="vo">
+								<!--<input type="text" value="{$data.tagid}">-->
+								<if condition="$vo.id == $data['tagid']">
+									<option value="{$vo.id}" selected="selected">{$vo.typename}</option>
+									<else/>
+									<option value="{$vo.id}">{$vo.typename}</option>
+								</if>
+							</foreach>
+						</select>
+						<!--<input type="text" name="typename" id='typename' value="{$data.sourcetype}">-->
+						<!--<span class="form-required">*</span>-->
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房源介绍:</label>
+					<div class="controls">
+						<textarea type="text" name="houseintro" id='houseintro'  style="width: 484px; height: 83px;" placeholder="请输入房源介绍" required>{$data.houseintro}</textarea>
+						<!--<span class="form-required">*</span>-->
+					</div>
+				</div><div class="control-group">
+				<label class="control-label">房源预定说明:</label>
+				<div class="controls">
+					<textarea type="text" name="houseorder" id='houseorder'  style="width: 484px; height: 83px;" placeholder="请输入房源预定说明" required>
+						{$data.houseorder}
+					</textarea>
+					<!--<span class="form-required">*</span>-->
+				</div>
+			</div>
+				<div class="control-group">
+					<label class="control-label">房屋详情设定:</label>
+					<hr style="margin-top:36px;margin-bottom: 12px;"/>
+					<div class="controls">
+						<!--<p style="border-bottom: grey">房屋详情设定</p>-->
+						<table>
+							<tr>
+								<td><span>房屋类型:</span></td>
+								<td><span>卫生间数量:</span></td>
+								<td><span>最短入住时间(天):</span></td>
+							</tr>
+							<tr>
+								<td>
+									<!--<input type="text" name="housetype" value="{$data.housetype}">-->
+									<select type="text" name="housetype">
+										<foreach name="housetype" item="vo">
+											<if condition="$vo.id == $data['typeid']">
+												<option value="{$vo.id}" selected="selected">{$vo.housetype}</option>
+											<else/>
+												<option value="{$vo.id}">{$vo.housetype}</option>
+											</if>
+										</foreach>
+									</select>
+								</td>
+								<td>
+									<!--<input type="text" value="{$data.bathroom}" name="bathroom">-->
+									<select name="bathroom">
+										<for start="1" end="11">
+											<if condition="$i == $data['bathroom']">
+												<option value="{$i}" selected="selected">{$i}</option>
+												<else/>
+												<option value="{$i}">{$i}</option>
+											</if>
+										</for>
+									</select>
+								</td>
+								<td>
+									<!--<input type="text" value="{$data.mindays}" name="mindays">-->
+									<select name="mindays">
+										<for start="1" end="11">
+											<if condition="$i == $data['mindays']">
+												<option value="{$i}" selected="selected">{$i}</option>
+												<else/>
+												<option value="{$i}">{$i}</option>
+											</if>
+										</for>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<table cellspacing="102">
+							<tr>
+								<td><span>入住时间:</span></td>
+								<td><span>退房时间:</span></td>
+								<td><span>线上押金(元):</span></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="starttime"id="starttime" value="{$data.starttime|date='H:i',###}" class="js-datetime1" placeholder="">
+									<!--<i style="width: 36px;position: absolute;cursor: pointer" class="">-->
+										<!--<img src="__TMPL__Public/assets/images/cal.png" alt="" id="starttime-img" style="margin-left:-36px;margin-top: -2px">-->
+									<!--</i>-->
+								</td>
+								<td>
+									<input type="text" name="endtime" id='endtime' value="{$data.endtime|date='H:i',###}" class="js-datetime1">
+									<!--<i style="width: 36px;position: absolute;cursor: pointer"><img onclick="cal()"id="endtime-img"  src="__TMPL__Public/assets/images/cal.png" alt=""  style="margin-left:-36px;margin-top: -2px"></i>-->
+								</td>
+								<td>
+									<input type="text" name="cash" id="cash" value="{$data.cash}" style="width: 205px;">
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">最多入住人数:</label>
+					<div class="controls">
+						<select name="maxmembers">
+							<for start="1" end="11">
+								<if condition="$i == $data['maxmembers']">
+									<option value="{$i}" selected="selected">{$i}</option>
+									<else/>
+									<option value="{$i}">{$i}</option>
+								</if>
+							</for>
+						</select>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">房屋面积:</label>
+					<div class="controls">
+						<input type="text" name="housearea" value="{$data['housearea']}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">房屋床类型:</label>
+					<div class="controls">
+						<select name="bedtype">
+							<!--<option value="">请选择床的类型</option>-->
+							<if condition="$data['bedtype'] == '大床'">
+								<option value="">请选择床的类型</option>
+								<option value="大床" selected="selected">{$data['bedtype']}</option>
+								<option value="双床">双床</option>
+								<elseif condition="$data['bedtype'] == '双床'"/>
+								<option value="">请选择床的类型</option>
+								<option value="大床">大床</option>
+								<option value="$data['bedtype']">{$data['bedtype']}</option>
+								<else/>
+								<option value="">请选择床的类型</option>
+								<option value="大床">大床</option>
+								<option value="双床">双床</option>
+							</if>
+
+						</select>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">房屋日单价(元/天):</label>
+					<div class="controls">
+						<input type="text" name="price" id='houseprice' value="{$data.price}" placeholder="请输入房屋日单价(元/天)" required>
+						<span class="form-required" style="color: red;">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<empty name="data.discount2">
+							<p><input type="checkbox" id="lz" >&nbsp;&nbsp;&nbsp;&nbsp;长租折扣 请输入长租折扣</p>
+							<else/>
+							<p><input type="checkbox" id="lz" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;长租折扣 请输入长租折扣</p>
+						</empty>
+
+						<php>
+							$count = count($data['discount2']);
+							$diff = intval(3 - count($data['discount2']));
+						</php>
+						<foreach name="data.discount2" item="vo">
+							<p> 满<input type="text" name="reach[]" class='reach' value="{$vo.days}" placeholder="" >天<input type="text" name="discount[]" class="discount" value="{$vo.discount}" placeholder="" >折扣</p>
+						</foreach>
+						<for start="$count" end="3">
+							<p> 满<input type="text" name="reach[]" class='reach'  placeholder="" >天<input type="text" name="discount[]" class="discount" placeholder="" >折扣</p>
+						</for>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+						<empty name="data.specialprice2">
+							<p><input type="checkbox" id="tj">&nbsp;&nbsp;&nbsp;&nbsp;特殊价格设定</p>
+							<else/>
+							<p><input type="checkbox" id="tj" checked="checked">&nbsp;&nbsp;&nbsp;&nbsp;特殊价格设定</p>
+						</empty>
+						<if  condition="$data.specialprice2 == ''">
+							<input type="text" name="specialrent[]" class='specialrent'  value="" placeholder="" style="text-align: center;margin-bottom: 10px;" >(元/天)
+							<input type="text" name="specialtime[]" class='specialtime js-datetime'  value="" style="width: 120px;margin-bottom: 10px;"  >
+							<if condition="$online != 1">
+								<input type="button" value="添加" onclick="addspecial()">
+								<else/>
+								<input type="button" value="添加" onclick="addspecial()" disabled>
+							</if>
+
+						</if>
+
+							<foreach name="data.specialprice2" item="vo" key="k">
+								<p class="sp">
+								<input type="text" name="specialrent[]" class='specialrent'  value="{$vo.money}" placeholder="" style="text-align: center;" >(元/天)
+								<input type="text" name="specialtime[]" class='specialtime js-datetime'  value="{$vo.time|date='Y-m-d H:i',###}" style="width: 120px;" >
+								<if condition="$k eq 0">
+									<input type="button" value="添加" onclick="addspecial()">
+									<input type="button" value="删除" onclick="delspecial(this)">
+								</if>
+								<if condition="$k gt 0">
+									<input type="button" value="删除" onclick="delspecial(this)">
+								</if>
+								<!--<input type="button" value="添加" onclick="addspecial()">-->
+								<!--<input type="button" value="删除" onclick="delspecial(this)">-->
+								</p>
+							</foreach>
+
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label for="" class="control-label">选择房源所在城市:</label>
+					<div class="controls">
+						<!--<input type="text" name="housecity" value="{$data.housecity}">-->
+						<select name="housecity">
+							<!--<option value="">选择房源所在城市</option>-->
+							<foreach name="housecity" item="vo">
+								<if condition="$vo.id == $data['housecity']">
+									<option value="{$vo.id}" selected="selected">{$vo.cityname}</option>
+									<else/>
+									<option value="{$vo.id}">{$vo.cityname}</option>
+								</if>
+							</foreach>
+
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">房源位置:</label>
+					<div class="controls">
+						<input type="text" placeholder="请输入房源位置" name="houseposition" id="houseposition" value="{$data.houseposition}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">房源具体位置</label>
+					<div class="controls"  id="r-result">
+						<p style=""><input type="text" name="houseaddress" placeholder="请输入房源具体位置" id="houseaddress" value="{$data.houseaddress}">
+							<if condition="$online !=1">
+								<input type="button"  id="bmap" value="生成" onclick="theLocation()" />
+							</if>
+						</p>
+						<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=dIqMYQ4dGeAgcnAN8xcKNWOBgy7S79pp&s=1"></script>
+						<!--地图插件生成//ak=dIqMYQ4dGeAgcnAN8xcKNWOBgy7S79pp-->
+						<div id="allmap" class="allmap"></div>
+						<input id="house_x" name="house_x" type="text" value="" style="display: none"/>
+						<input id="house_y" name="house_y" type="text" value="" style="display: none"/>
+					</div>
+
+
+
+					<!--<div class="controls">-->
+						<!--<p style=""><input type="text" name="houseaddress" placeholder="请输入房源具体位置" value="{$data.houseaddress}"><button>生成</button></p>-->
+						<!--地图插件生成-->
+					<!--</div>-->
+				</div>
+				<div class="control-group">
+					<label class="control-label">房源照片:</label>
+					<div class="controls">
+						<input type="text" name="aids" class="aids" value="{$aids}" required style="display: none">
+						<div>
+							<foreach name="photos" item="vo">
+								<div  id="{$vo.photoid}" style="">
+								<!--<div width="100px" height="100px"style="margin-right: 10px">-->
+									<img src="__ROOT__/data/upload/{$vo.photopath}" style="width: 100px;height: 100px">
+								<if condition="$online != 1">
+									<input type="button" value="删除"onclick="del(1,{$vo['photoid']})">
+								</if>
+								</div>
+								<!--</div>-->
+							</foreach>
+						</div>
+						<if condition="$online != 1">
+							<ul id="photos" class="pic-list unstyled"></ul>
+							<a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
+						</if>
+
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">房主身份证号码:</label>
+					<div class="controls">
+						<input type="text" placeholder="请输入房主身份证号码" name="ownerID" id="ownerID" value="{$data.ownerid}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">房主姓名:</label>
+					<div class="controls">
+						<input type="text" placeholder="请输入房主姓名" name="ownername" value="{$data.ownername}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">房主手机号:</label>
+					<div class="controls">
+						<input type="text" placeholder="请输入房主手机号" name="ownerphone" id="ownerphone" value="{$data.ownerphone}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">上传营业执照:</label>
+					<div class="controls">
+						<div id="license">
+							<img src="__ROOT__/uploads/license/{$data.houselicense}" alt="营业执照" style="width: 200px;height: 200px">
+							<empty name="$data.houselicense">
+								<if condition="$online != 1">
+									<input type="button" value="删除" onclick="del(2,{$data['houseid']})">
+								</if>
+								<input type="hidden" value="{$data.houselicense}" name="oldlicense" id="oldlicense" >
+								<!--<input type="hidden" value="{$data.houselicense}" name="ownerlicense" id="" >-->
+							</empty>
+						</div>
+
+						<if condition="$online != 1">
+							<input type="file" placeholder="" name="ownerlicense" id="ownerlicense">
+						</if>
+
+					</div>
+				</div>
+				<input type="hidden" name="id" value="{$houseid}" />
+				<input type="hidden" name="online" value="0" id="online">
+			</fieldset>
+			<div class="form-actions">
+
+				<if condition="$online != 1">
+					<button type="submit" class="btn btn-primary js-ajax-submit" onclick="return checkPost()">{:L('SAVE')}</button>
+					<button type="submit" class="btn btn-primary js-ajax-submit" onclick=" return checkOnline()">保存并上线</button>
+					<else/>
+					<button type="submit" class="btn btn-primary js-ajax-submit" onclick="return checkPost()" disabled>{:L('SAVE')}</button>
+				</if>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+				<!-- <button class="btn js-ajax-close-btn" type="submit">{:L('CLOSE')}</button> -->
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<!--<script src="__PUBLIC__/js/datetimepicker/jquery.datetimepicker.full.js"></script>-->
+	<script src="__ROOT__/easyupload/vendor/jquery.cookie-1.4.1.min.js"></script>
+	<script src="__ROOT__/easyupload/easyUpload.js"></script>
+	<script>
+		$(function() {
+		    var state = $("#state").val();
+		    if(state == 1){
+                $("input[type='text']").attr("readonly","readonly");
+                $("textarea").attr("readonly","readonly");
+                $("select").attr("readonly","readonly");
+			}else{
+                $("input[type='text']").removeAttr("readonly");
+                $("textarea").removeAttr("readonly");
+                $("select").removeAttr("readonly");
+			}
+
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie('refersh_time_admin_menu_index', 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+		});
+	</script>
+
+
+	<script>
+        // $("easyUploadIcon").attr('data-checked','yes');
+        $('#easyContainer').easyUpload({
+            allowFileTypes: '*.jpg;*.JPG;*.doc;*.DOC;*.docx;*.DOCX;*.pdf;*.PDF;*.txt;*.TXT;*.zip;*.ZIP;*.tif;*.TIF;',//允许上传文件类型，格式';*.doc;*.pdf'
+            allowFileSize: 100000,//允许上传文件大小(KB)
+            selectText: '选择文件',//选择文件按钮文案
+            multi: true,//是否允许多文件上传
+            multiNum:30,//多文件上传时允许的文件数
+            showNote: true,//是否展示文件上传说明
+            note: '提示：最多上传<span style="color: ">30</span>个文件，支持格式为jpg,png',//文件上传说明
+            showPreview: true,//是否显示文件预览
+            url: '{:U("house/upload")}',//上传文件地址
+            fileName: 'file',//文件filename配置参数
+            formParam: {
+                // token: $.cookie('token_cookie')//不需要验证token时可以去掉
+            },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
+            timeout: 30000,//请求超时时间
+            okCode: 200,//与后端返回数据code值一致时执行成功回调，不配置默认200
+            successFunc: function(res) {
+                arr = new Array();
+                len = (res.success).length;
+                for(i=0;i<len;i++){
+                    arr.push(res.success[i]['aid']);
+                }
+                ids= arr.join(',');
+                $(".aids").val(ids);
+
+                //如果文件名没有填写,则默认显示第一个上传文件的文件名
+                // var name = $("input[name='title']").val();
+                //     var dataindex = $("li[data-index='0']").find('.easy_upload_filename').text();
+                //     var extindex = dataindex.lastIndexOf(".");
+                //     var ext = dataindex.substr(extindex);
+                //     var name = dataindex.replace(ext,'');
+                // $("input[name='title']").val(name);
+                console.log('成功回调',res);
+            },//上传成功回调函数
+            errorFunc: function(res) {
+                console.log('失败回调', res);
+            },//上传失败回调函数
+            deleteFunc: function(res) {
+                allids=  $(".aids").val();
+                ids = new Array();
+                len = (res.success).length;
+                for(i=0;i<len;i++){
+                    ids.push(res.success[i]['aid']);
+                }
+                undeleids= ids.join(',');
+
+                //  console.log('删除回调', res);
+                $.ajax({
+                    type: 'GET',
+                    url: '<?php echo U("house/delete_attach")?>',
+                    data: 'allids='+allids+'&undeleids='+undeleids,
+                    success: function (data) {
+                        if(data.code == 0){
+                            $(".aids").val(undeleids);
+                            console.log(data);
+                        }else{
+                            console.log('文件未删除成功'+data);
+                        }
+                    },
+                    dataType: 'json',
+                });
+
+            }//删除文件回调函数
+        });
+	</script>
+	<script>
+        /**
+		 * delete照片或者许可证附件
+		 * @param type附件类型(1房源照片,2许可证)
+		 * @return int
+		 */
+        function del(type,id){
+            $.ajax({
+                type: 'GET',
+                // async:false,
+                url: '<?php echo U("house/delete")?>',
+                data: 'type='+type+'&id='+id,
+                success: function (data) {
+                    if(data.code == 0){
+						if(data.type == 1){
+						    $("#"+data.id).remove();
+						}
+                        if(data.type == 2){
+                            $("#license").remove();
+                        }
+					}else{
+                        alert(data.msg);
+					}
+                },
+                dataType: 'json',
+            });
+		}
+
+        function checkPost(){
+            var ownerID = $("#ownerID").val();
+            var ownerphone = $("#ownerphone").val();
+            var starttime = $("#starttime").val();
+            var endtime = $("#endtime").val();
+            var aids = $(".aids").val();
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if(ownerID){
+                if(reg.test(ownerID) === false)
+                {
+                    alert("身份证号码输入不合法!");
+                    return  false;
+                }
+            }
+            var stime = new Date(starttime);
+            var stime = stime.getTime();
+            var etime = new Date(endtime);
+            var etime = etime.getTime();
+            if(stime && etime){
+                if(stime > etime || stime === etime){
+                    alert('入住时间必须小于退房时间!');
+                    return false;
+                }
+            }
+
+            var cash= $("#cash").val();
+            var houseprice= $("#houseprice").val();
+            var re = /^[0-9]+$/ ;
+            if(cash){
+                if(!re.test(cash)){
+                    alert('押金必须是正整数!');
+                    return false;
+                }
+            }
+            if(houseprice){
+                if(!re.test(houseprice)){
+                    alert('房屋日单价必须是正整数!');
+                    return false;
+                }
+            }
+
+        }
+
+
+		$("#ownerlicense").click(function () {
+			var oldlicense = $("#oldlicense").val();
+			if(oldlicense){
+			    alert('请先删除原来的营业执照,再上传新的');
+				return false;
+			}
+        })
+
+        function checkOnline() {
+            $("#online").val(1);
+            checkPost();
+        }
+
+        function addspecial() {
+            var ele="<p class=\"sp\">" +
+                " <input type=\"text\" name=\"specialrent[]\" class='specialrent' value=\"\" placeholder=\"\" style=\"\">(元/天)\n" +
+                "<input type=\"text\" name=\"specialtime[]\" class=\"js-datetime specialtime\" value=\"{$formget.time|default=''}\" style=\"width: 120px;\" autocomplete=\"off\" >\n" +
+                "<input onclick=\"delspecial(this)\" type='button' value='删除'/>" +
+                "</p>";
+            $(".sp").parent().append(ele);
+            date();
+        }
+        function delspecial(ts) {
+            $(ts).parent().remove()
+        }
+
+        function date() {
+            var dateTimeInput = $("input.js-datetime");
+            if (dateTimeInput.length) {
+                Wind.use('datePicker', function () {
+                    dateTimeInput.datePicker({
+                        time: true,
+                        format: 'HH: MM'
+                    });
+                });
+            }
+        }
+	</script>
+	<script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(116.404, 39.915);
+        map.centerAndZoom(point,15);
+
+        var localSearch = new BMap.LocalSearch(map, {
+            renderOptions:{map: map}
+        });
+        function theLocation() {
+            var keyword = $("#houseaddress").val();
+            map.clearOverlays();//清空原来的标注
+            localSearch.setSearchCompleteCallback(function (searchResult) {
+                if (typeof(searchResult) == "undefined"  ||  searchResult == '' || searchResult == null) {
+                    alert("百度API没有搜索到该地址");
+                    return false;
+                }else{
+                    var poi = searchResult.getPoi(0);
+                    $('#house_x').val(poi.point.lng);
+                    $('#house_y').val(poi.point.lat);
+                    map.centerAndZoom(poi.point, 15);
+                    var marker = new BMap.Marker(new BMap.Point(poi.point.lng, poi.point.lat));  // 创建标注，为要查询的地址对应的经纬度
+                    map.addOverlay(marker);
+                }
+            });
+            localSearch.search(keyword);
+
+        }
+
+        //页面加载
+		$(function () {
+            var keyword = $("#houseaddress").val();
+            map.clearOverlays();//清空原来的标注
+            localSearch.setSearchCompleteCallback(function (searchResult) {
+                if (typeof(searchResult) == "undefined" ||  searchResult == '' || searchResult == null ) {
+                    alert("百度API没有搜索到该地址");
+                    return false;
+                }else{
+                    var poi = searchResult.getPoi(0);
+                    $('#house_x').val(poi.point.lng);
+                    $('#house_y').val(poi.point.lat);
+                    map.centerAndZoom(poi.point, 15);
+                    var marker = new BMap.Marker(new BMap.Point(poi.point.lng, poi.point.lat));  // 创建标注，为要查询的地址对应的经纬度
+                    map.addOverlay(marker);
+                }
+            });
+            localSearch.search(keyword);
+        })
+
+	</script>
+</body>
+</html>
