@@ -1,13 +1,7 @@
 <admintpl file="header" />
-<link rel="stylesheet" href="__ROOT__/easyupload/easy-upload.css">
-<!--<link rel="stylesheet" href="__PUBLIC__/js/datetimepicker/jquery.datetimepicker.css">-->
+
 <style>
-	.easy_upload_delbtn{
-		display: none;
-	}
-	.easy_upload_upbtn{
-		display: none;
-	}
+
 	.reach{
 		width: 100px;
 		margin-left: 6px;
@@ -407,8 +401,7 @@
 	</div>
 	<script src="__PUBLIC__/js/common.js"></script>
 	<!--<script src="__PUBLIC__/js/datetimepicker/jquery.datetimepicker.full.js"></script>-->
-	<script src="__ROOT__/easyupload/vendor/jquery.cookie-1.4.1.min.js"></script>
-	<script src="__ROOT__/easyupload/easyUpload.js"></script>
+
 	<script>
 		$(function() {
 		    var state = $("#state").val();
@@ -444,74 +437,6 @@
 		});
 	</script>
 
-
-	<script>
-        // $("easyUploadIcon").attr('data-checked','yes');
-        $('#easyContainer').easyUpload({
-            allowFileTypes: '*.jpg;*.JPG;*.doc;*.DOC;*.docx;*.DOCX;*.pdf;*.PDF;*.txt;*.TXT;*.zip;*.ZIP;*.tif;*.TIF;',//允许上传文件类型，格式';*.doc;*.pdf'
-            allowFileSize: 100000,//允许上传文件大小(KB)
-            selectText: '选择文件',//选择文件按钮文案
-            multi: true,//是否允许多文件上传
-            multiNum:30,//多文件上传时允许的文件数
-            showNote: true,//是否展示文件上传说明
-            note: '提示：最多上传<span style="color: ">30</span>个文件，支持格式为jpg,png',//文件上传说明
-            showPreview: true,//是否显示文件预览
-            url: '{:U("house/upload")}',//上传文件地址
-            fileName: 'file',//文件filename配置参数
-            formParam: {
-                // token: $.cookie('token_cookie')//不需要验证token时可以去掉
-            },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
-            timeout: 30000,//请求超时时间
-            okCode: 200,//与后端返回数据code值一致时执行成功回调，不配置默认200
-            successFunc: function(res) {
-                arr = new Array();
-                len = (res.success).length;
-                for(i=0;i<len;i++){
-                    arr.push(res.success[i]['aid']);
-                }
-                ids= arr.join(',');
-                $(".aids").val(ids);
-
-                //如果文件名没有填写,则默认显示第一个上传文件的文件名
-                // var name = $("input[name='title']").val();
-                //     var dataindex = $("li[data-index='0']").find('.easy_upload_filename').text();
-                //     var extindex = dataindex.lastIndexOf(".");
-                //     var ext = dataindex.substr(extindex);
-                //     var name = dataindex.replace(ext,'');
-                // $("input[name='title']").val(name);
-                console.log('成功回调',res);
-            },//上传成功回调函数
-            errorFunc: function(res) {
-                console.log('失败回调', res);
-            },//上传失败回调函数
-            deleteFunc: function(res) {
-                allids=  $(".aids").val();
-                ids = new Array();
-                len = (res.success).length;
-                for(i=0;i<len;i++){
-                    ids.push(res.success[i]['aid']);
-                }
-                undeleids= ids.join(',');
-
-                //  console.log('删除回调', res);
-                $.ajax({
-                    type: 'GET',
-                    url: '<?php echo U("house/delete_attach")?>',
-                    data: 'allids='+allids+'&undeleids='+undeleids,
-                    success: function (data) {
-                        if(data.code == 0){
-                            $(".aids").val(undeleids);
-                            console.log(data);
-                        }else{
-                            console.log('文件未删除成功'+data);
-                        }
-                    },
-                    dataType: 'json',
-                });
-
-            }//删除文件回调函数
-        });
-	</script>
 	<script>
         /**
 		 * delete照片或者许可证附件
