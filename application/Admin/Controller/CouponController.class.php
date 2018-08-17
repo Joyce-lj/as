@@ -69,9 +69,12 @@ class CouponController extends AdminbaseController {
         $this->coupon_model->limit($page->firstRow , $page->listRows);
         $useDetail= $this->coupon_model->where($where)->select();
 
+        $cname = $this->coupon_model->where(array('cid'=>$cid))->field('cname')->find();
+
         $this->assign('useDetail',$useDetail);
         $this->assign('page',$page->show('Admin'));
         $this->assign('cid',$cid);
+        $this->assign('cname',$cname);
         $this->assign('couponid',$couponid);
         $this->assign('phone',$phone);
         $this->assign('keyword',$keyword);
