@@ -228,52 +228,46 @@ class HouseorderController extends AppframeController{
         $this->houseorder_model->where($where);
         $this->houseorder_model->field($field);
         $order = $this->houseorder_model->select();
-        foreach ($order as $or=>$v){
-            $order[$or]['checkin_time'] = date('n',$order[$or]['checkin_time']).'月'.date('j',$order[$or]['checkin_time']).'日';
-            $order[$or]['checkout_time'] = date('n',$order[$or]['checkout_time']).'月'.date('j',$order[$or]['checkout_time']).'日';
-            $order[$or]['stayinfo'] = json_decode($order[$or]['stayinfo'],true);
-        }
 
-        $field = 'bathroom,mindays,cash,price,maxmembers,housearea,bedtype,starttime,endtime';
-        $where['houseid'] = $houseid;
-        $housedetail = $this->housedetail_model->where($where)->field($field)->select();
-        foreach($housedetail as $hd=>$v){
-            $housedetail[$hd]['starttime'] = date('H:i',$housedetail[$hd]['starttime']);
-            $housedetail[$hd]['endtime'] = date('H:i',$housedetail[$hd]['endtime']);
-        }
 
-        $field = 'houseaddress,houseposition,typeid,house_x,house_y';
-        $where['houseid'] = $houseid;
-        $house = $this->house_model->where($where)->field($field)->select();
-        foreach ($house  as $h=>$v){
-            $type = $this->housetype_model->where($v['typeid'])->field('housetype')->find();
-            $house[$h]['housetype'] = $type['housetype'];
-            //合并
-            if($orderid){
-                $house = array_merge($house[$h],$housedetail[$h],$order[$h]);
+        //缓存
+        $cache = S(array('type'=>'file','prefix'=>'','expire'=>300));//'expire'=>60
+        $key = 'orderdetail';
+        $orderDetail = $cache->$key;
+
+        if(!empty($orderDetail)){
+            $house = $orderDetail;
+        }else{
+            foreach ($order as $or=>$v){
+                $order[$or]['checkin_time'] = date('n',$order[$or]['checkin_time']).'月'.date('j',$order[$or]['checkin_time']).'日';
+                $order[$or]['checkout_time'] = date('n',$order[$or]['checkout_time']).'月'.date('j',$order[$or]['checkout_time']).'日';
+                $order[$or]['stayinfo'] = json_decode($order[$or]['stayinfo'],true);
             }
+
+            $field = 'bathroom,mindays,cash,price,maxmembers,housearea,bedtype,starttime,endtime';
+            $where['houseid'] = $houseid;
+            $housedetail = $this->housedetail_model->where($where)->field($field)->select();
+            foreach($housedetail as $hd=>$v){
+                $housedetail[$hd]['starttime'] = date('H:i',$housedetail[$hd]['starttime']);
+                $housedetail[$hd]['endtime'] = date('H:i',$housedetail[$hd]['endtime']);
+            }
+
+            $field = 'houseaddress,houseposition,typeid,house_x,house_y';
+            $where['houseid'] = $houseid;
+            $house = $this->house_model->where($where)->field($field)->select();
+            foreach ($house  as $h=>$v){
+                $type = $this->housetype_model->where($v['typeid'])->field('housetype')->find();
+                $house[$h]['housetype'] = $type['housetype'];
+                //合并
+                if($orderid){
+                    $house = array_merge($house[$h],$housedetail[$h],$order[$h]);
+                }
+            }
+            //设置缓存
+            $cache->$key = $house;
         }
         $data['data']['orderdetail'] = $house;
         $this->ajaxData($data);
-//        //有未过期未使用的优惠券
-//        $haveCoupon  = $this->memberCoupon_model->getCouponGroupByConds(1,'cid','cid',array('mid'=>$uid,'state'=>1));
-//        if($haveCoupon){
-//            $cids = implode(',',$haveCoupon);
-//            $where['cid'] = array('in',$cids);
-//            $field = 'conditions';
-//            $coupon = $this->coupon_model->where($where)->field($field)->select();
-//        }
-//        //此房子是否有折扣
-//        $discount = $this->housedetail_model->where(array('houseid'=>$houseid))->field('discount,specialprice,price,cash')->select();
-////        $this->houseorder_model->getHouseRent($houseid,$totalCost,$staydays,$discount=array(),$couponInfo = array());
-////        print_r($coupon);
-//        //先折扣,后减优惠
-//        $this->houseorder_model->staydaysOldprice($detail,$discount);
-//        $this->houseorder_model->getHouseRent($houseid,$totalCost=2000,$staydays=10,$discount=array(),$couponInfo = array());
-//
-//        //特殊价格
-
-//        print_r($coupon);
     }
 
     public function getHousenameById($houseid=0){

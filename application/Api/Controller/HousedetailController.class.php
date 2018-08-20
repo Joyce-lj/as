@@ -36,27 +36,38 @@ class HousedetailController extends AppframeController{
         if($houseid){
             $where['as_house.houseid'] = intval($houseid);
         }
-        $houseDetail = $this->house_model->houseDetail($where,$field);
-        foreach ($houseDetail as $k=>$v){
-            $discount = json_decode($v['discount'],true);
-            $houseDetail[$k]['starttime'] = date('H:i',$v['starttime']);
-            $houseDetail[$k]['endtime'] = date('H:i',$v['endtime']);
 
-            //tagid
-            $tag = $this->housesource_model->where(array('id'=>$houseDetail[$k]['tagid']))->field('typename')->find();
-            $houseDetail[$k]['typename'] = $tag['typename'];
-            $houseDetail[$k]['housediscount'] = $discount;
-            for($i=0;$i<count($discount);$i++){
-                $houseDetail[$k]['longrent_discount'][$i] =  '满'.$discount[$i]['days'].'天打'.$discount[$i]['discount'].'折';
+        $cache = S(array('type'=>'file','prefix'=>'','expire'=>300));//'expire'=>60
+        $key = 'housedetail';
+        $houseDetail = $cache->$key;
+        if(!empty($houseDetail)){
+            $houseDetail = $cache->$key;
+        }else{
+            $houseDetail = $this->house_model->houseDetail($where,$field);
+            foreach ($houseDetail as $k=>$v){
+                $discount = json_decode($v['discount'],true);
+                $houseDetail[$k]['starttime'] = date('H:i',$v['starttime']);
+                $houseDetail[$k]['endtime'] = date('H:i',$v['endtime']);
+
+                //tagid
+                $tag = $this->housesource_model->where(array('id'=>$houseDetail[$k]['tagid']))->field('typename')->find();
+                $houseDetail[$k]['typename'] = $tag['typename'];
+                $houseDetail[$k]['housediscount'] = $discount;
+                for($i=0;$i<count($discount);$i++){
+                    $houseDetail[$k]['longrent_discount'][$i] =  '满'.$discount[$i]['days'].'天打'.$discount[$i]['discount'].'折';
+                }
+                $photoinfo =  $this->housephoto_model->getPhotoByHouseid($houseDetail[$k]['houseid'],$field = 'savename,photopath,weight');
+                $photoinfo =  array_values($photoinfo);
+                foreach ($photoinfo as $p=>$v){
+                    $servername = httpType().$_SERVER['SERVER_NAME'];
+                    $uploadDir = $servername.__ROOT__.'/data/upload/';
+                    $houseDetail[$k]['housephoto'][] = $uploadDir.$photoinfo[$p]['photopath'];
+                }
             }
-            $photoinfo =  $this->housephoto_model->getPhotoByHouseid($houseDetail[$k]['houseid'],$field = 'savename,photopath,weight');
-            $photoinfo =  array_values($photoinfo);
-            foreach ($photoinfo as $p=>$v){
-                $servername = httpType().$_SERVER['SERVER_NAME'];
-                $uploadDir = $servername.__ROOT__.'/data/upload/';
-                $houseDetail[$k]['housephoto'][] = $uploadDir.$photoinfo[$p]['photopath'];
-            }
+            //设置缓存
+            $cache->$key = $houseDetail;
         }
+
         $data['data']['housedetail'] = $houseDetail[0];
         $this->ajaxData($data);
     }
