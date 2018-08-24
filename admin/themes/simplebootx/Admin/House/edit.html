@@ -389,8 +389,8 @@
 			<div class="form-actions">
 
 				<if condition="$online != 1">
-					<button type="submit" class="btn btn-primary js-ajax-submit" onclick="return checkPost()">{:L('SAVE')}</button>
-					<button type="submit" class="btn btn-primary js-ajax-submit" onclick=" return checkOnline()">保存并上线</button>
+					<button type="button" class="btn btn-primary js-ajax-submit" onclick="sendForm()">{:L('SAVE')}</button>
+					<button type="button" class="btn btn-primary js-ajax-submit" onclick="checkOnline()">保存并上线</button>
 					<else/>
 					<button type="submit" class="btn btn-primary js-ajax-submit" onclick="return checkPost()" disabled>{:L('SAVE')}</button>
 				</if>
@@ -465,13 +465,33 @@
             });
 		}
 
+
+        function sendForm(){
+            if(checkPost()){
+                $("form").submit();
+            }
+        }
+
         function checkPost(){
             var ownerID = $("#ownerID").val();
             var ownerphone = $("#ownerphone").val();
-            var starttime = $("#starttime").val();
-            var endtime = $("#endtime").val();
-            var aids = $(".aids").val();
+            var housename = $("#housename").val();
+            var houseintro = $("#houseintro").val();
+            var houseorder = $("#houseorder").val();
             var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if(housename == '' || housename == null){
+                alert('房源名称不能为空!');
+                return false;
+            }
+            if(houseintro == '' || houseintro == null){
+                alert('房源介绍不能为空!');
+                return false;
+            }
+            if(houseorder == '' || houseorder == null){
+                alert('房源预定说明不能为空!');
+                return false;
+            }
+
             if(ownerID){
                 if(reg.test(ownerID) === false)
                 {
@@ -479,16 +499,7 @@
                     return  false;
                 }
             }
-            var stime = new Date(starttime);
-            var stime = stime.getTime();
-            var etime = new Date(endtime);
-            var etime = etime.getTime();
-            if(stime && etime){
-                if(stime > etime || stime === etime){
-                    alert('入住时间必须小于退房时间!');
-                    return false;
-                }
-            }
+
 
             var cash= $("#cash").val();
             var houseprice= $("#houseprice").val();
@@ -508,6 +519,41 @@
 
         }
 
+        function check_rent(){
+            var re = /^\d+$/;
+            $('.reach').each(function(key,value){
+                if($(this).val() == ''){
+                    $(this).val(0);
+                }
+                if(isNaN($(this).val())){
+                    alert('长租天数必须是正整数!');
+                    return false;
+                }
+                if($(this).val() > 0){
+                    if(!re.test($(this).val())){
+                        alert('长租天数必须是正整数!');
+                        return false;
+                    }
+                }
+            });
+
+            $('.discount').each(function(key,value){
+                if($(this).val() == ''){
+                    $(this).val(0);
+                }
+                if(isNaN($(this).val())){
+                    alert('折扣必须是正整数!');
+                    return false;
+                }
+                if($(this).val() > 0){
+                    if(!re.test($(this).val())){
+                        alert('折扣必须是正整数!');
+                        return false;
+                    }
+                }
+            });
+            return true;
+        }
 
 		$("#ownerlicense").click(function () {
 			var oldlicense = $("#oldlicense").val();
@@ -518,8 +564,10 @@
         })
 
         function checkOnline() {
-            $("#online").val(1);
-            checkPost();
+            if(checkPost()){
+                $("#online").val(1);
+                $("form").submit();
+            }
         }
 
         function addspecial() {

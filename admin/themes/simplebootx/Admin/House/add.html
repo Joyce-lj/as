@@ -275,8 +275,8 @@
 				<input type="hidden" name="online" value="0" id="online">
 			</fieldset>
 			<div class="form-actions">
-				<button type="submit" class="btn btn-primary js-ajax-submit" onclick=" return checkPost()">新增</button>
-				<button type="submit" class="btn btn-primary js-ajax-submit" onclick=" return checkOnline()">新增并上线</button>
+				<button type="button" class="btn btn-primary js-ajax-submit" onclick="sendForm()">新增</button>
+				<button type="button" class="btn btn-primary js-ajax-submit" onclick="checkOnline()">新增并上线</button>
 				<a class="btn" href="javascript:history.back(-1);">取消</a>
 			</div>
 		</form>
@@ -292,30 +292,31 @@
 <!-- 视实际需要决定是否引入jquery.cookie-1.4.1.min.js-->
 
 <script>
+	function sendForm(){
+	    if(checkPost()){
+            $("form").submit();
+		}
+	}
 	function checkPost(){
         var ownerID = $("#ownerID").val();
         var ownerphone = $("#ownerphone").val();
-        var starttime = $("#starttime").val();
-        var endtime = $("#endtime").val();
-        var aids = $(".aids").val();
+        var housename = $("#housename").val();
+        var houseintro = $("#houseintro").val();
+        var houseorder = $("#houseorder").val();
         var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-        if(ownerID){
-            if(reg.test(ownerID) === false)
-            {
-                alert("身份证号码输入不合法!");
-                return  false;
-            }
-        }
-        var stime = new Date(starttime);
-        var stime = stime.getTime();
-        var etime = new Date(endtime);
-        var etime = etime.getTime();
-        if(stime && etime){
-            if(stime > etime || stime === etime){
-                alert('入住时间必须小于退房时间!');
-                return false;
-			}
+        if(housename == '' || housename == null){
+            alert('房源名称不能为空!');
+            return false;
 		}
+        if(houseintro == '' || houseintro == null){
+            alert('房源介绍不能为空!');
+            return false;
+        }
+        if(houseorder == '' || houseorder == null){
+            alert('房源预定说明不能为空!');
+            return false;
+        }
+
 
 		var cash= $("#cash").val();
 		var houseprice= $("#houseprice").val();
@@ -332,18 +333,28 @@
                 return false;
             }
         }
+        //长租天数
+		if($('.reach').length > 0){
+            check_rent();
+		}
 
-
-        // if(aids == '' || aids == null){
-         //    alert('房源照片还没有上传哦!');
-         //    return false;
-		// }
+		//身份证
+        if(ownerID){
+            if(reg.test(ownerID) === false)
+            {
+                alert("身份证号码输入不合法!");
+                return  false;
+            }
+        }
+        return true;
 
 	}
 
   	function checkOnline() {
-	    $("#online").val(1);
-	    checkPost();
+        if(checkPost()){
+            $("#online").val(1);
+            $("form").submit();
+        }
     }
 
     function addspecial() {
@@ -414,20 +425,39 @@
 	}
 
 	function check_rent(){
-        var reach = $('.reach');
-        for(var i=0;i<reach.length;i++){
-            if(!re.test(reach[i])){
+        var re = /^\d+$/;
+        $('.reach').each(function(key,value){
+            if($(this).val() == ''){
+                $(this).val(0);
+            }
+            if(isNaN($(this).val())){
                 alert('长租天数必须是正整数!');
                 return false;
             }
-        }
-        var discount = $('.discount');
-        for(var i=0;i<discount.length;i++){
-            if(!re.test(discount[i])){
-                alert('折扣数必须是正整数!');
+            if($(this).val() < 0){
+                if(!re.test($(this).val())){
+                    alert('长租天数必须是正整数!');
+                    return false;
+                }
+			}
+		});
+
+        $('.discount').each(function(key,value){
+            if($(this).val() == ''){
+                $(this).val(0);
+            }
+            if(isNaN($(this).val())){
+                alert('折扣天数必须是正整数!');
                 return false;
             }
-        }
+            if($(this).val() > 0){
+                if(!re.test($(this).val())){
+                    alert('折扣天数必须是正整数!');
+                    return false;
+                }
+            }
+        });
+        return true;
 	}
     function price_disabled() {
         if(flag){
@@ -451,24 +481,8 @@
         }
     }
 
-    function datetime() {
-        var dateTimeInput = $("input.js-datetime");
-        if (dateTimeInput.length) {
-            Wind.use('datePicker', function () {
-                dateTimeInput.datePicker({
-                    time: true,
-                    // format: 'yyyy'
-                });
-            });
-        }
-    }
-    function cal() {
-        // alert(111);
-        // datetime();
-        $("#endtime").addClass('js-datetime');
-        $("#endtime").attr("autofocus",'autofocus');
 
-    }
+
 </script>
 
 <script type="text/javascript">
