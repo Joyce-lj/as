@@ -83,12 +83,17 @@ class HouseorderController extends AppframeController{
             //写入log
             $failReason = '用户'.$uid.'房源'.$houseid.'下单日期'.$checkin_time.'至'.$checkout_time.'与已租日期有交集';
             $logfile = dirname(dirname(dirname(__DIR__))).'\/data\/errorlog\/order\/';
-            if(!is_dir($logfile)){echo 1;
+            if(!is_dir($logfile)){
                 mkdir($logfile, 0777,true);
             }
+
             $filename = 'order.txt';
             addLog($failReason,$logfile,$filename);
-            //写入log 结束
+            //写入log end
+            $data['code'] = -2;
+            $data['msg'] = '所选日期有误';
+            $this->ajaxData($data);
+
         }else{
             //房屋名称
             $isOrder = 1;
@@ -152,7 +157,8 @@ class HouseorderController extends AppframeController{
             $totalcost = $discount_cost;
             $ordernum = $this->getOrderNum($lastorder['orderid']);
             $paydatas = array('ordernum'=>$ordernum,'itemdesc'=>'test','totalcost'=>$totalcost);
-            $paystate = $this->wxpay($paydatas);print_r($paystate);die;
+            $paystate = $this->wxpay($paydatas);
+//            print_r($paystate);die;
 /////////////////////////////////////////////////////////////////////////////////
             if($paystate){//成功
                 $this->houseorder_model->commit();
@@ -313,3 +319,5 @@ class HouseorderController extends AppframeController{
         echo json_encode($res);die;
     }
 }
+
+
