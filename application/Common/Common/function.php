@@ -1907,7 +1907,6 @@ function sp_get_plugins_return($url, $params = array()){
  * @param string $filename_nosuffix
  */
 function sp_add_template_file_suffix($filename_nosuffix){
-    
     if(file_exists_case($filename_nosuffix.C('TMPL_TEMPLATE_SUFFIX'))){
         $filename_nosuffix = $filename_nosuffix.C('TMPL_TEMPLATE_SUFFIX');
     }else if(file_exists_case($filename_nosuffix.".php")){

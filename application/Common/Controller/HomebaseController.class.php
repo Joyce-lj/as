@@ -198,19 +198,19 @@ class HomebaseController extends AppframeController {
 		}else{
 		    C("TMPL_PARSE_STRING.__TMPL__",__ROOT__."/".$current_tmpl_path);
 		}
-		
-		
+
+
 		C('SP_VIEW_PATH',$tmpl_path);
 		C('DEFAULT_THEME',$theme);
 		
 		define("SP_CURRENT_THEME", $theme);
-		
+
 		if(is_file($template)) {
 			return $template;
 		}
 		$depr       =   C('TMPL_FILE_DEPR');
 		$template   =   str_replace(':', $depr, $template);
-		
+
 		// 获取当前模块
 		$module   =  MODULE_NAME;
 		if(strpos($template,'@')){ // 跨模块调用模版文件
@@ -226,7 +226,7 @@ class HomebaseController extends AppframeController {
 		}elseif(false === strpos($template, '/')){
 			$template = CONTROLLER_NAME . $depr . $template;
 		}
-		
+
 		$file = sp_add_template_file_suffix($current_tmpl_path.$module.$template);
 		$file= str_replace("//",'/',$file);
 		if(!file_exists_case($file)) E(L('_TEMPLATE_NOT_EXIST_').':'.$file);

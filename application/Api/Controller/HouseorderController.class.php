@@ -72,7 +72,7 @@ class HouseorderController extends AppframeController{
             $this->ajaxData($data);
         }
 
-        //同时下单
+        //下单
         $this->houseorder_model->startTrans();
         $alreadyDate = $this->houseorder_model->getOrderedHouseTime($houseid,$lock=true);
         $pickDate =  dateList($checkin_time,$checkout_time);
@@ -156,7 +156,7 @@ class HouseorderController extends AppframeController{
 //            $paystate = 1;
             $totalcost = $discount_cost;
             $ordernum = $this->getOrderNum($lastorder['orderid']);
-            $paydatas = array('ordernum'=>$ordernum,'itemdesc'=>'test','totalcost'=>$totalcost);
+            $paydatas = array('ordernum'=>$ordernum,'itemdesc'=>'test','totalcost'=>$totalcost,'uid'=>$uid);
             $paystate = $this->wxpay($paydatas);
 //            print_r($paystate);die;
 /////////////////////////////////////////////////////////////////////////////////
@@ -306,8 +306,9 @@ class HouseorderController extends AppframeController{
         $appid = $wxConfig::APPID;
         $mch_id = $wxConfig::MCHID;
         $key = $wxConfig::KEY;
-        $openid = I('post.openid');
-        $openid = 'oVDb15WC6z5Y1i34w3u2JjDp-FxY';
+
+        $uid = $paydatas['uid'];
+        $openid = $this->member_model->where('mid',$uid)->getField('openid');
 
         $data = array(
             'ordernum'=> $paydatas['ordernum'],
@@ -317,6 +318,144 @@ class HouseorderController extends AppframeController{
         $wx = new \WeixinPay($appid,$openid,$mch_id,$key,$data);
         $res = $wx->pay();
         echo json_encode($res);die;
+    }
+
+
+    //获取openid
+    public function getopenid(){
+        $js_code = I('post.code');
+        $uid = I('post.uid');
+        if(empty($js_code)) return array('status'=>0,'info'=>'缺少js_code');
+
+        $wxConfig = new \WxPayConfig();
+        $appid = $wxConfig::APPID;
+        $appsecret = $wxConfig::APPSECRET;
+
+        $params = array(
+            'appid' => $appid,
+            'secret' => $appsecret,
+            'js_code' => $js_code, // 前端传来的
+            'grant_type' => 'authorization_code',
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.weixin.qq.com/sns/jscode2session');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        $output = curl_exec($ch);
+
+        if (false === $output) {
+            echo 'CURL Error:' . curl_error($ch);
+        }
+
+        $op = json_decode($output,true);
+        print_r($op);die;
+        $openid = $op['openid'];
+        $openid = 23322;
+        if($uid){
+            //根据uid修改openid的值
+            $where['mid'] = $uid;
+            $data['openid'] = $openid;
+            $upmid = $this->member_model->where($where)->save($data);
+        }
+        return $upmid;
+//        echo $output;
+    }
+
+    //微信支付回调验证
+    public function wxnotify(){
+        $wxConfig = new \WxPayConfig();
+        $key = $wxConfig::KEY;
+        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
+
+        // 这句file_put_contents是用来查看服务器返回的XML数据 测试完可以删除了
+        //file_put_contents(APP_ROOT.'/Statics/log2.txt',$res,FILE_APPEND);
+
+        //将服务器返回的XML数据转化为数组
+        $data = self::xml2array($xml);
+        // 保存微信服务器返回的签名sign
+        $data_sign = $data['sign'];
+        // sign不参与签名算法
+        unset($data['sign']);
+        $sign = self::makeSign($data,$key);
+
+        // 判断签名是否正确  判断支付状态
+        if ( ($sign===$data_sign) && ($data['return_code']=='SUCCESS') && ($data['result_code']=='SUCCESS') ) {
+            $result = $data;
+            //获取服务器返回的数据
+            $order_sn = $data['out_trade_no'];            //订单单号
+            $openid = $data['openid'];                    //付款人openID
+            $total_fee = $data['total_fee'];            //付款金额
+            $transaction_id = $data['transaction_id'];     //微信支付流水号
+
+            //更新数据库
+            //$this->updateDB($order_sn,$openid,$total_fee,$transaction_id);
+
+            $result = true;
+        }else{
+            $result = false;
+        }
+        // 返回状态给微信服务器
+        if ($result) {
+            $str='<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>';
+        }else{
+            $str='<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[签名失败]]></return_msg></xml>';
+        }
+        echo $str;
+        return $result;
+    }
+
+    /**
+     * 生成签名, $KEY就是支付key
+     * @return 签名
+     */
+    private function makeSign( $params,$KEY){
+        //签名步骤一：按字典序排序数组参数
+        ksort($params);
+        $string = $this->ToUrlParams($params);  //参数进行拼接key=value&k=v
+        //签名步骤二：在string后加入KEY
+        $string = $string . "&key=".$KEY;
+        //签名步骤三：MD5加密
+        $string = md5($string);
+        //签名步骤四：所有字符转为大写
+        $result = strtoupper($string);
+        return $result;
+    }
+
+
+
+    /**
+     * 将参数拼接为url: key=value&key=value
+     * @param $params
+     * @return string
+     */
+    public function ToUrlParams( $params ){
+        $string = '';
+        if( !empty($params) ){
+            $array = array();
+            foreach( $params as $key => $value ){
+                $array[] = $key.'='.$value;
+            }
+            $string = implode("&",$array);
+        }
+        return $string;
+    }
+
+    //xml转换成数组
+    private function xml2array($xml) {
+
+        //禁止引用外部xml实体
+
+        libxml_disable_entity_loader(true);
+
+
+        $xmlstring = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+
+
+        $val = json_decode(json_encode($xmlstring), true);
+
+        return $val;
     }
 }
 
