@@ -31,4 +31,14 @@ class MemberModel extends CommonModel {
        $res = $this->where($where)->field($field)->select();
        return $res;
     }
+
+    /**
+     * 根据uid修改openid
+    */
+    public function setOpenidByUid($uid,$openid){
+        $where = array('mid'=>$uid);
+        $data = array('openid'=>$openid);
+        $res = $this->where($where)->save($data);
+        return $res;
+    }
 }
