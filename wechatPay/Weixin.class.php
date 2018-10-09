@@ -25,24 +25,28 @@ class WeixinPay{
     private function unifiedorder(){
         $datas = $this->data;
         $url='https://api.mch.weixin.qq.com/pay/unifiedorder';
+
         $parameters=array(
             'appid'=>$this->appid,//小程序ID
             'mch_id'=>$this->mch_id,//商户号
             'nonce_str'=>$this->createNoncestr(),//随机字符串
             'body'=>$datas['itemdesc'],//商品描述
             'out_trade_no'=>$datas['ordernum'],//商户订单号
-            'total_fee'=>floatval(0.01*100),//总金额 单位 分
+            'total_fee'=>floatval(0.01*100),//总金额 单位 分//测试成功后将0.0.1换成$datas['totalcost']
             'spbill_create_ip'=>$_SERVER['REMOTE_ADDR'],//终端IP
-            'notify_url'=>'http://www.weixin.qq.com/wxpay/pay.php',//支付完成回调地址url,不能带参数
+            //'notify_url'=>'http://www.weixin.qq.com/wxpay/pay.php',//支付完成回调地址url,不能带参数
+            'notify_url'=>'https://'.$_SERVER['HTTP_HOST'].'/index.php/api/houseorder/wxnotify', //支付完成回调地址url,不能带参数
             'openid'=>$this->openid,//用户id
-            'trade_type'=>'MWEB'//交易类型
+            'trade_type'=>'JSAPI'//交易类型
         );
         //统一下单签名
         $parameters['sign']=$this->getSign($parameters);
         $xmlData=$this->arrayToXml($parameters);      //数组转换成xml
         $xmlDataurl = $this->postXmlSSLCurl($xmlData,$url,60);
         $return= $this->xmlToArray($xmlDataurl);     //xml转换成数组
-        echo json_encode($return);die;
+
+        /////可注释掉()
+        //echo json_encode($return);die;
         return $return;
     }
 
@@ -169,4 +173,6 @@ class WeixinPay{
 
         return $val;
     }
+
+
 }
